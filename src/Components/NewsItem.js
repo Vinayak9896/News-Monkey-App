@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 export class NewsItem extends Component {
+   defaultImage = require("../Components/IMG-20230206-WA0010.jpg")
 
   render() {
     let { title, description, imageUrl, newsUrl, author, date ,source} = this.props;
@@ -17,7 +18,7 @@ export class NewsItem extends Component {
             </span>
           </div>
         
-          <img src={imageUrl} className="card-img-top" alt="..." />
+          <img src={imageUrl?imageUrl:this.defaultImage} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title"> {title} </h5>
             <p className="card-text">{description}</p>
